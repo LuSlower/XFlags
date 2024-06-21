@@ -36,8 +36,5 @@ Supongamos que deseas depurar notepad.exe utilizando el depurador windbg.exe. Aq
 Navega a `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options`
 Crea una nueva clave llamada notepad.exe.
 Dentro de notepad.exe, crea un nuevo valor de cadena llamado Debugger.
-Establece el valor de Debugger a:
-swift
-
-`"C:\path\to\windbg.exe"`
+Establece el valor de Debugger a: `"C:\path\to\windbg.exe"`
 
