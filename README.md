@@ -22,19 +22,3 @@ Clave IFEO:
 `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options`
 
 Debes crear una subclave dentro de Image File Execution Options con el nombre del ejecutable que deseas configurar. por ejemplo, si deseas configurar `notepad.exe`, crearías una clave llamada `notepad.exe`.
-
-Agregar Valores a la Clave de la Aplicación:
-
-`Debugger`: Para hacer que la aplicación se ejecute bajo un depurador, crea un nuevo valor de cadena llamado Debugger y establece su valor al path del depurador, por ejemplo:
-swift
-
-`"C:\path\to\debugger.exe"`
-
-Supongamos que deseas depurar notepad.exe utilizando el depurador windbg.exe. Aquí están los pasos:
-
-> Abre el editor de registro (regedit).
-Navega a `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options`
-Crea una nueva clave llamada notepad.exe.
-Dentro de notepad.exe, crea un nuevo valor de cadena llamado Debugger.
-Establece el valor de Debugger a: `"C:\path\to\windbg.exe"`
-
