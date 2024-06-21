@@ -22,3 +22,5 @@ Clave IFEO:
 `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options`
 
 Debes crear una subclave dentro de Image File Execution Options con el nombre del ejecutable que deseas configurar. por ejemplo, si deseas configurar `notepad.exe`, crearías una clave llamada `notepad.exe`.
+
+más informacion: https://hejelylab.github.io/blog/IRC/Persistence-IFEO
