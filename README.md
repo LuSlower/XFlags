@@ -14,7 +14,6 @@ Usos de IFEO
 
 * Uso en Malware: Desafortunadamente, también se ha visto que IFEO se utiliza en técnicas de malware para interceptar la ejecución de aplicaciones y redirigirlas a código malicioso.
 
-> Configuración de IFEO
 La configuración de IFEO se realiza mediante la edición del registro de Windows. Aquí tienes un ejemplo básico de cómo configurar IFEO para una aplicación en particular:
 
 ejecuta regedit o regedt32 desde el menú de inicio o desde ejecutar (win +`r)
