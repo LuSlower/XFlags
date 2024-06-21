@@ -3,7 +3,7 @@ pequeño script para configurar algunas caracteristicas de IFEO
 
 ![image](https://github.com/LuSlower/Ifeo-Utility/assets/148411728/79676cb0-d2ef-4c3f-8a52-57a0b05bed39)
 
-> IFEO, que significa "Image File Execution Options" (Opciones de Ejecución de Archivos de Imagen), es una característica en sistemas operativos Windows que permite la configuración de cómo se ejecutan ciertas aplicaciones. Esta configuración se realiza a través del registro de Windows y puede ser utilizada para diversas tareas de depuración y control de aplicaciones.
+> IFEO, "Image File Execution Options" (Opciones de Ejecución de Archivos de Imagen), es una característica de Windows que permite la configuración de cómo se ejecutan ciertas aplicaciones. Esta configuración se realiza a través del registro de Windows y puede ser utilizada para diversas tareas de depuración y control de aplicaciones.
 
 Usos de IFEO
 * Depuración: IFEO se utiliza frecuentemente para depurar aplicaciones. Configurando una entrada de IFEO para una aplicación específica, los desarrolladores pueden hacer que la aplicación se ejecute bajo un depurador automáticamente cada vez que se inicia.
