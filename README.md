@@ -10,9 +10,7 @@ configure algunas caracteristicas de IFEO
 Usos de IFEO
 * Depuración: IFEO se utiliza frecuentemente para depurar aplicaciones. Configurando una entrada de IFEO para una aplicación específica, los desarrolladores pueden hacer que la aplicación se ejecute bajo un depurador automáticamente cada vez que se inicia.
 
-* Redirección de Ejecución: IFEO puede redirigir la ejecución de una aplicación a otra. Por ejemplo, en lugar de ejecutar un programa original, se puede ejecutar un programa modificado o alternativo.
-
-* Bloqueo de Aplicaciones: Administradores de sistemas pueden usar IFEO para bloquear la ejecución de ciertas aplicaciones. Configurando IFEO, pueden hacer que cualquier intento de ejecutar una aplicación en particular simplemente no haga nada o ejecute un programa diferente.
+* Bloqueo de Aplicaciones: Puede usar IFEO para bloquear la ejecución de ciertas aplicaciones. Configurando IFEO, pueden hacer que cualquier intento de ejecutar una aplicación en particular simplemente no haga nada o ejecute un programa diferente.
 
 * Uso en Malware: Desafortunadamente, también se ha visto que IFEO se utiliza en técnicas de malware para interceptar la ejecución de aplicaciones y redirigirlas a código malicioso.
 
