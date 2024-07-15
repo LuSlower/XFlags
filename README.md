@@ -16,7 +16,7 @@ Usos de IFEO
 
 La configuración de IFEO se realiza mediante la edición del registro de Windows. Aquí tienes un ejemplo básico de cómo configurar IFEO para una aplicación en particular:
 
-ejecuta regedit o regedt32 desde el menú de inicio o desde ejecutar (win +`r)
+ejecuta regedit o regedt32 desde el menú de inicio o desde ejecutar (win + r)
 
 Clave IFEO:
 `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options`
