@@ -14,13 +14,7 @@ Usos de IFEO
 
 * Uso en Malware: Desafortunadamente, también se ha visto que IFEO se utiliza en técnicas de malware para interceptar la ejecución de aplicaciones y redirigirlas a código malicioso.
 
-La configuración de IFEO se realiza mediante la edición del registro de Windows. Aquí tienes un ejemplo básico de cómo configurar IFEO para una aplicación en particular:
-
-ejecuta regedit o regedt32 desde el menú de inicio o desde ejecutar (win + r)
-
 Clave IFEO:
 `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options`
-
-Debes crear una subclave dentro de Image File Execution Options con el nombre del ejecutable que deseas configurar. por ejemplo, si deseas configurar `notepad.exe`, crearías una clave llamada `notepad.exe`.
 
 más informacion: https://hejelylab.github.io/blog/IRC/Persistence-IFEO
