@@ -3,7 +3,7 @@ configure algunas caracteristicas de IFEO
 
 [![Total Downloads](https://img.shields.io/github/downloads/LuSlower/Ifeo-Utility/total.svg)](https://github.com/LuSlower/Ifeo-Utility/releases) [![PayPal Badge](https://img.shields.io/badge/PayPal-003087?logo=paypal&logoColor=fff&style=flat)](https://paypal.me/eldontweaks) 
 
-![image](https://github.com/LuSlower/Ifeo-Utility/assets/148411728/79676cb0-d2ef-4c3f-8a52-57a0b05bed39)
+![image](https://github.com/user-attachments/assets/71bc5bca-521b-4a29-be77-5951871e1004)
 
 > IFEO, "Image File Execution Options" (Opciones de Ejecución de Archivos de Imagen), es una característica de Windows que permite la configuración de cómo se ejecutan ciertas aplicaciones. Esta configuración se realiza a través del registro de Windows y puede ser utilizada para diversas tareas de depuración y control de aplicaciones.
 
