@@ -668,14 +668,15 @@ $buttonSave.Add_Click({
     # aplicar configuracion de ifeo
     Set-Ifeo -process $process -cpuPriority $cpuPriorityValue -ioPriority $ioPriorityValue -pagePriority $pagePriorityValue -useLargePages $useLargePagesValue -debugger $debugger -mitigationOp $bitmaskMit -globalFlag $bitmaskFlags
     
-    $existProcess = Get-Process -Name $process.Replace(".exe", "") -ErrorAction Stop
+    $processName = $process.Replace(".exe", "")
+    $existProcess = Get-Process -Name $processName -ErrorAction Stop
 
     if ($existProcess) {
         $result = [System.Windows.Forms.MessageBox]::Show("Restart Process?", "Applied settings", [System.Windows.Forms.MessageBoxButtons]::YesNo, [System.Windows.Forms.MessageBoxIcon]::Information)
     
         # reiniciar el proceso, opcionalmente
         if ($result -eq [System.Windows.Forms.DialogResult]::Yes) {
-            Restart-Process -processName $process
+            Restart-Process -processName $processName
         }
     }
 })
