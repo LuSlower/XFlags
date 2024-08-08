@@ -499,8 +499,6 @@ $listBoxProcesses.add_SelectedIndexChanged({
     }
 })
 
-Load-Processes-Ifeo | Out-Null
-
 # Process
 $rdbtnProcess = New-Object System.Windows.Forms.RadioButton
 $rdbtnProcess.Text = "Process"
@@ -521,6 +519,8 @@ $form.Controls.Add($rdbtnConfig)
 $rdbtnConfig.add_CheckedChanged({
     Load-Processes-Ifeo
 })
+
+Load-Processes-Ifeo | Out-Null
 
 # TabControl
 $tab = New-Object System.Windows.Forms.TabControl
