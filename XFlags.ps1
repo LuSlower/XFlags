@@ -88,7 +88,7 @@ function Restart-Process {
         [string]$processName
     )
 
-    $process = Get-Process -Name $processName -ErrorAction SilentlyContinue
+    $process = Get-Process -Name $processName -ErrorAction Stop
 
     if ($process -ne $null) {
 
@@ -114,6 +114,7 @@ function Set-Ifeo {
             [int]$ioPriority,
             [int]$pagePriority,
             [int]$useLargePages,
+            [string]$debugger,
             [int]$mitigationOp,
             [int]$globalFlag
     )
@@ -149,6 +150,12 @@ function Set-Ifeo {
         Set-ItemProperty -Path $default -Name "UseLargePages" -Value $useLargePages
     } else {
         Remove-ItemProperty -Path $default -Name "UseLargePages" -ErrorAction SilentlyContinue
+    }
+
+    if (![string]::IsNullOrEmpty($debugger)) {
+        Set-ItemProperty -Path $default -Name "Debugger" -Value $debugger
+    } else {
+        Remove-ItemProperty -Path $default -Name "Debugger" -ErrorAction SilentlyContinue
     }
 
     if ($mitigationOp -ne $null -and $mitigationOp -ne 0) {
@@ -646,6 +653,7 @@ $buttonSave.Add_Click({
     $ioPriority = $comboBoxIoPriority.SelectedItem
     $pagePriority = $comboBoxPagePriority.SelectedItem
     $useLargePages = if ($chkbLargePages.Checked) {"Enabled (1)"} else {"default (delete)"}
+    $debugger = $txtDbgr.Text
 
     if (-not $cpuPriority -or -not $ioPriority -or -not $pagePriority) {
         [System.Windows.Forms.MessageBox]::Show("You must select one option for all priorities", "Info", [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Information)
@@ -656,16 +664,19 @@ $buttonSave.Add_Click({
     $cpuPriorityValue = Get-ValueFromText -inputText $cpuPriority
     $ioPriorityValue = Get-ValueFromText -inputText $ioPriority
     $pagePriorityValue = Get-ValueFromText -inputText $pagePriority
-    $useLargePagesValue = Get-ValueFromText -inputText $useLargePages
-
-    $result = [System.Windows.Forms.MessageBox]::Show("Restart Process?", "Applied settings", [System.Windows.Forms.MessageBoxButtons]::YesNo, [System.Windows.Forms.MessageBoxIcon]::Information)
     
     # aplicar configuracion de ifeo
-    Set-Ifeo -process $process -cpuPriority $cpuPriorityValue -ioPriority $ioPriorityValue -pagePriority $pagePriorityValue -useLargePages $useLargePagesValue -mitigationOp $bitmaskMit -globalFlag $bitmaskFlags
+    Set-Ifeo -process $process -cpuPriority $cpuPriorityValue -ioPriority $ioPriorityValue -pagePriority $pagePriorityValue -useLargePages $useLargePagesValue -debugger $debugger -mitigationOp $bitmaskMit -globalFlag $bitmaskFlags
+    
+    $existProcess = Get-Process -Name $process.Replace(".exe", "") -ErrorAction Stop
 
-    # reiniciar el proceso, opcionalmente
-    if ($result -eq [System.Windows.Forms.DialogResult]::Yes) {
-        Restart-Process -processName $ProcessName
+    if ($existProcess) {
+        $result = [System.Windows.Forms.MessageBox]::Show("Restart Process?", "Applied settings", [System.Windows.Forms.MessageBoxButtons]::YesNo, [System.Windows.Forms.MessageBoxIcon]::Information)
+    
+        # reiniciar el proceso, opcionalmente
+        if ($result -eq [System.Windows.Forms.DialogResult]::Yes) {
+            Restart-Process -processName $process
+        }
     }
 })
 
