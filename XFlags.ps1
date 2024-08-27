@@ -65,15 +65,16 @@ $mitigationOptions = @(
     @{Name = "FLG_HeapTermination"; Description = "Heap Termination on Corruption"; Abbreviation = "heapt"; Flags = @{AlwaysOn = 0x1000; AlwaysOff = 0x2000}},
     @{Name = "FLG_BottomUpASLR"; Description = "Bottom-Up ASLR"; Abbreviation = "buaslr"; Flags = @{AlwaysOn = 0x10000; AlwaysOff = 0x20000}},
     @{Name = "FLG_HEASLR"; Description = "High Entropy ASLR"; Abbreviation = "heaslr"; Flags = @{AlwaysOn = 0x100000; AlwaysOff = 0x200000}},
-    @{Name = "FLG_DisableWin32KCalls"; Description = "Disable Win32K Calls"; Abbreviation = "dis-win32k"; Flags = @{AlwaysOn = 0x1000000; AlwaysOff = 0x2000000}},
-    @{Name = "FLG_DisableExtensionPoint"; Description = "Disable Extension Point"; Abbreviation = "dis-extpoint"; Flags = @{AlwaysOn = 0x10000000; AlwaysOff = 0x20000000}},
-    @{Name = "FLG_DisableDynamicCode"; Description = "Disable Dynamic Code"; Abbreviation = "dis-dyncode"; Hex = 0x100000000; Flags = @{AlwaysOn = 0x100000000; AlwaysOff = 0x200000000}},
-    @{Name = "FLG_CFG"; Description = "Control Flow Guard"; Abbreviation = "cfg"; Flags = @{AlwaysOn = 0x1000000000; AlwaysOff = 0x2000000000}},
-    @{Name = "FLG_BlockNonMicrosoftBinaries"; Description = "Block Non-Microsoft Binaries"; Abbreviation = "block-non-ms"; Flags = @{AlwaysOn = 0x10000000000; AlwaysOff = 0x20000000000}},
-    @{Name = "FLG_BlockNonSystemFonts"; Description = "Block Non-System Fonts"; Abbreviation = "block-non-sysf"; Flags = @{AlwaysOn = 0x100000000000; AlwaysOff = 0x200000000000}},
-    @{Name = "FLG_DisableRemoteLoads"; Description = "Disable Remote Loads"; Abbreviation = "dis-remloads"; Flags = @{AlwaysOn = 0x1000000000000; AlwaysOff = 0x2000000000000}},
-    @{Name = "FLG_DisableLowIntegrityLoads"; Description = "Disable Low Integrity Loads"; Abbreviation = "dis-lowintl"; Flags = @{AlwaysOn = 0x10000000000000; AlwaysOff = 0x20000000000000}},
-    @{Name = "FLG_PreferSystemImages"; Description = "Prefer System Images"; Abbreviation = "pref-sysimg"; Flags = @{AlwaysOn = 0x100000000000000; AlwaysOff = 0x200000000000000}}
+    @{Name = "FLG_SHC"; Description = "Strict Handle Checks"; Abbreviation = "shc"; Flags = @{AlwaysOn = 0x1000000; AlwaysOff = 0x2000000}},
+    @{Name = "FLG_DisableWin32KCalls"; Description = "Disable Win32K Calls"; Abbreviation = "dis-win32k"; Flags = @{AlwaysOn = 0x10000000; AlwaysOff = 0x20000000}},
+    @{Name = "FLG_DisableExtensionPoint"; Description = "Disable Extension Point"; Abbreviation = "dis-extpoint"; Flags = @{AlwaysOn = 0x100000000; AlwaysOff = 0x200000000}},
+    @{Name = "FLG_DisableDynamicCode"; Description = "Disable Dynamic Code"; Abbreviation = "dis-dyncode"; Flags = @{AlwaysOn = 0x1000000000; AlwaysOff = 0x2000000000}},
+    @{Name = "FLG_CFG"; Description = "Control Flow Guard"; Abbreviation = "cfg"; Flags = @{AlwaysOn = 0x10000000000; AlwaysOff = 0x20000000000}},
+    @{Name = "FLG_BlockNonMicrosoftBinaries"; Description = "Block Non-Microsoft Binaries"; Abbreviation = "block-non-ms"; Flags = @{AlwaysOn = 0x100000000000; AlwaysOff = 0x200000000000}},
+    @{Name = "FLG_BlockNonSystemFonts"; Description = "Block Non-System Fonts"; Abbreviation = "block-non-sysf"; Flags = @{AlwaysOn = 0x1000000000000; AlwaysOff = 0x2000000000000}},
+    @{Name = "FLG_DisableRemoteLoads"; Description = "Disable Remote Loads"; Abbreviation = "dis-remloads"; Flags = @{AlwaysOn = 0x10000000000000; AlwaysOff = 0x20000000000000}},
+    @{Name = "FLG_DisableLowIntegrityLoads"; Description = "Disable Low Integrity Loads"; Abbreviation = "dis-lowintl"; Flags = @{AlwaysOn = 0x100000000000000; AlwaysOff = 0x200000000000000}},
+    @{Name = "FLG_PreferSystemImages"; Description = "Prefer System Images"; Abbreviation = "pref-sysimg"; Flags = @{AlwaysOn = 0x1000000000000000; AlwaysOff = 0x2000000000000000}}
 )
 
 $otherMitigationOptions = @(
@@ -536,7 +537,7 @@ $tab.Add_SelectedIndexChanged({
     if ($tab.SelectedIndex -eq 0) {
         $form.ClientSize = New-Object System.Drawing.Size(360, 310)
     } elseif ($tab.SelectedIndex -ge 1) {
-        $form.ClientSize = New-Object System.Drawing.Size(450, 310)
+        $form.ClientSize = New-Object System.Drawing.Size(430, 310)
     }
 })
 
