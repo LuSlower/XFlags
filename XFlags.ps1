@@ -455,8 +455,6 @@ $form.MaximizeBox = $false
 $form.MinimizeBox = $false
 $form.StartPosition = "CenterScreen"
 $form.FormBorderStyle = [System.Windows.Forms.FormBorderStyle]::FixedSingle
-$form.KeyPreview = $true
-$form.BackColor = [System.Drawing.Color]::FromArgb(44, 44, 44)
 $form.Add_KeyDown({
     param($sender, $e)
     if ($e.KeyCode -eq [System.Windows.Forms.Keys]::F5) {
@@ -468,8 +466,6 @@ $listBoxProcesses = New-Object System.Windows.Forms.ListBox
 $listBoxProcesses.Location = New-Object System.Drawing.Point(10, 28)
 $listBoxProcesses.Size = New-Object System.Drawing.Size(150, 250)
 $listBoxProcesses.BorderStyle = [System.Windows.Forms.BorderStyle]::FixedSingle
-$listBoxProcesses.BackColor = [System.Drawing.Color]::FromArgb(44, 44, 44)
-$listBoxProcesses.ForeColor = [System.Drawing.Color]::White
 $form.Controls.Add($listBoxProcesses)
 $listBoxProcesses.add_SelectedIndexChanged({
     # Obtener el proceso seleccionado
@@ -517,9 +513,6 @@ $rdbtnProcess.Text = "Process"
 $rdbtnProcess.Size = New-Object System.Drawing.Size(70, 20)
 $rdbtnProcess.Location = New-Object System.Drawing.Point(10, 280)
 $rdbtnProcess.Checked = $true
-$rdbtnProcess.UseVisualStyleBackColor = $false
-$rdbtnProcess.BackColor = [System.Drawing.Color]::Transparent
-$rdbtnProcess.ForeColor = [System.Drawing.Color]::White
 $form.Controls.Add($rdbtnProcess)
 $rdbtnProcess.add_CheckedChanged({
     Load-Processes-Ifeo
@@ -530,9 +523,6 @@ $rdbtnConfig = New-Object System.Windows.Forms.RadioButton
 $rdbtnConfig.Text = "Config"
 $rdbtnConfig.Size = New-Object System.Drawing.Size(60, 20)
 $rdbtnConfig.Location = New-Object System.Drawing.Point(80, 280)
-$rdbtnConfig.UseVisualStyleBackColor = $false
-$rdbtnConfig.BackColor = [System.Drawing.Color]::Transparent
-$rdbtnConfig.ForeColor = [System.Drawing.Color]::White
 $form.Controls.Add($rdbtnConfig)
 $rdbtnConfig.add_CheckedChanged({
     Load-Processes-Ifeo
@@ -554,15 +544,12 @@ $tab.Add_SelectedIndexChanged({
 # Ifeo
 $tabIfeo = New-Object System.Windows.Forms.TabPage
 $tabIfeo.Text = "General"
-$tabIfeo.BackColor = [System.Drawing.Color]::FromArgb(44, 44, 44)
 
 # PriorityClass
 $labelCpuPriority = New-Object System.Windows.Forms.Label
 $labelCpuPriority.Location = New-Object System.Drawing.Point(210, 20)
 $labelCpuPriority.Size = New-Object System.Drawing.Size(80, 13)
 $labelCpuPriority.Text = "PriorityClass:"
-$labelCpuPriority.ForeColor = [System.Drawing.Color]::White
-$labelCpuPriority.BackColor = [System.Drawing.Color]::Transparent
 $tabIfeo.Controls.Add($labelCpuPriority)
 
 $comboBoxCpuPriority = New-Object System.Windows.Forms.ComboBox
@@ -571,8 +558,6 @@ $comboBoxCpuPriority.Size = New-Object System.Drawing.Size(95, 23)
 $comboBoxCpuPriority.Items.AddRange(@("Realtime (4)", "High (3)", "Above Normal (6)", "Normal (2)", "Below Normal (5)", "Low (1)", "default (delete)"))
 $comboBoxCpuPriority.Text = "default (delete)"
 $comboBoxCpuPriority.DropDownStyle = [System.Windows.Forms.ComboBoxStyle]::DropDownList
-$comboBoxCpuPriority.ForeColor = [System.Drawing.Color]::White
-$comboBoxCpuPriority.BackColor = [System.Drawing.Color]::FromArgb(66, 66, 66)
 $tabIfeo.Controls.Add($comboBoxCpuPriority)
 
 # IoPriority
@@ -580,8 +565,6 @@ $labelIoPriority = New-Object System.Windows.Forms.Label
 $labelIoPriority.Location = New-Object System.Drawing.Point(210, 70)
 $labelIoPriority.Size = New-Object System.Drawing.Size(60, 13)
 $labelIoPriority.Text = "IoPriority:"
-$labelIoPriority.ForeColor = [System.Drawing.Color]::White
-$labelIoPriority.BackColor = [System.Drawing.Color]::Transparent
 $tabIfeo.Controls.Add($labelIoPriority)
 
 $comboBoxIoPriority = New-Object System.Windows.Forms.ComboBox
@@ -591,8 +574,6 @@ $comboBoxIoPriority.Items.AddRange(@("Critical (4)", "High (3)", "Normal (2)", "
 $comboBoxIoPriority.Text = "default (delete)"
 $comboBoxIoPriority.DropDownStyle = [System.Windows.Forms.ComboBoxStyle]::DropDownList
 $comboBoxIoPriority.DropDownStyle = [System.Windows.Forms.ComboBoxStyle]::DropDownList
-$comboBoxIoPriority.ForeColor = [System.Drawing.Color]::White
-$comboBoxIoPriority.BackColor = [System.Drawing.Color]::FromArgb(66, 66, 66)
 $tabIfeo.Controls.Add($comboBoxIoPriority)
 
 # MemPriority
@@ -600,8 +581,6 @@ $labelMemPriority = New-Object System.Windows.Forms.Label
 $labelMemPriority.Location = New-Object System.Drawing.Point(210, 120)
 $labelMemPriority.Size = New-Object System.Drawing.Size(85, 13)
 $labelMemPriority.Text = "PagePriority:"
-$labelMemPriority.ForeColor = [System.Drawing.Color]::White
-$labelMemPriority.BackColor = [System.Drawing.Color]::Transparent
 $tabIfeo.Controls.Add($labelMemPriority)
 
 $comboBoxPagePriority = New-Object System.Windows.Forms.ComboBox
@@ -611,8 +590,6 @@ $comboBoxPagePriority.Items.AddRange(@("Normal (5)", "Below Normal (4)", "Medium
 $comboBoxPagePriority.Text = "default (delete)"
 $comboBoxPagePriority.DropDownStyle = [System.Windows.Forms.ComboBoxStyle]::DropDownList
 $comboBoxPagePriority.DropDownStyle = [System.Windows.Forms.ComboBoxStyle]::DropDownList
-$comboBoxPagePriority.ForeColor = [System.Drawing.Color]::White
-$comboBoxPagePriority.BackColor = [System.Drawing.Color]::FromArgb(66, 66, 66)
 $tabIfeo.Controls.Add($comboBoxPagePriority)
 
 # LargePages
@@ -620,8 +597,6 @@ $chkbLargePages = New-Object System.Windows.Forms.CheckBox
 $chkbLargePages.Location = New-Object System.Drawing.Point(210, 172)
 $chkbLargePages.Size = New-Object System.Drawing.Size(105, 20)
 $chkbLargePages.Text = "UseLargePages"
-$chkbLargePages.ForeColor = [System.Drawing.Color]::White
-$chkbLargePages.BackColor = [System.Drawing.Color]::Transparent
 $tabIfeo.Controls.Add($chkbLargePages)
 $tooltip = New-Object System.Windows.Forms.ToolTip
 $tooltip.SetToolTip($chkbLargePages, "Enable Large Pages if possible")
@@ -631,26 +606,18 @@ $labelDbgr = New-Object System.Windows.Forms.Label
 $labelDbgr.Location = New-Object System.Drawing.Point(170, 210)
 $labelDbgr.Size = New-Object System.Drawing.Size(70, 13)
 $labelDbgr.Text = "Debugger:"
-$labelDbgr.ForeColor = [System.Drawing.Color]::White
-$labelDbgr.BackColor = [System.Drawing.Color]::Transparent
 $tabIfeo.Controls.Add($labelDbgr)
 
 $txtDbgr = New-Object System.Windows.Forms.TextBox
 $txtDbgr.Location = New-Object System.Drawing.Point(170, 228)
 $txtDbgr.Size = New-Object System.Drawing.Size(150, 20)
 $txtDbgr.BorderStyle = [System.Windows.Forms.BorderStyle]::FixedSingle
-$txtDbgr.BackColor = [System.Drawing.Color]::FromArgb(44, 44, 44)
-$txtDbgr.ForeColor = [System.Drawing.Color]::White
 $tabIfeo.Controls.Add($txtDbgr)
 
 $btnSearchDbg = New-Object System.Windows.Forms.Button
 $btnSearchDbg.Location = New-Object System.Drawing.Point(325, 228)
 $btnSearchDbg.Size = New-Object System.Drawing.Size(25, 20)
 $btnSearchDbg.Text = "..."
-$btnSearchDbg.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
-$btnSearchDbg.BackColor = [System.Drawing.Color]::FromArgb(66, 66, 66)
-$btnSearchDbg.ForeColor = [System.Drawing.Color]::White
-$btnSearchDbg.FlatAppearance.BorderSize = 0
 $tabIfeo.Controls.Add($btnSearchDbg)
 $btnSearchDbg.Add_Click({
     # Crear el OpenFileDialog
@@ -676,10 +643,6 @@ $buttonSave = New-Object System.Windows.Forms.Button
 $buttonSave.Location = New-Object System.Drawing.Point(230, 260)
 $buttonSave.Size = New-Object System.Drawing.Size(50, 20)
 $buttonSave.Text = "Save"
-$buttonSave.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
-$buttonSave.BackColor = [System.Drawing.Color]::FromArgb(66, 66, 66)
-$buttonSave.ForeColor = [System.Drawing.Color]::White
-$buttonSave.FlatAppearance.BorderSize = 0
 $tabIfeo.Controls.Add($buttonSave)
 
 # aplicar todos los cambios
@@ -725,15 +688,12 @@ $buttonSave.Add_Click({
 ### MitigationOptions
 $tabMit = New-Object System.Windows.Forms.TabPage
 $tabMit.Text = "MitigationOptions"
-$tabMit.BackColor = [System.Drawing.Color]::FromArgb(44, 44, 44)
 
 # MitigationBitmask
 $labelMit = New-Object System.Windows.Forms.Label
 $labelMit.Location = New-Object System.Drawing.Point(180, 10)
 $labelMit.Size = New-Object System.Drawing.Size(250, 13)
 $labelMit.Text = "BitMask: 0x0"
-$labelMit.ForeColor = [System.Drawing.Color]::White
-$labelMit.BackColor = [System.Drawing.Color]::Transparent
 $tabMit.Controls.Add($labelMit)
 
 # Configuración de posición inicial y dimensiones del área visible
@@ -755,8 +715,6 @@ foreach ($option in $mitigationOptions) {
     $checkbox.ThreeState = $true
     $checkbox.Location = New-Object System.Drawing.Point($currentX, $currentY)
     $checkbox.Size = New-Object System.Drawing.Size(100, 20)  # Ajustar el tamaño del CheckBox
-    $checkbox.ForeColor = [System.Drawing.Color]::White
-    $checkbox.BackColor = [System.Drawing.Color]::Transparent
     $tabMit.Controls.Add($checkbox)
     $checkbox.Add_Click({
         switch ($checkbox.CheckState) {
@@ -803,8 +761,6 @@ foreach ($option in $otherMitigationOptions){
     $width = ($option.Name).Length + 60
     $checkbox.Location = New-Object System.Drawing.Point($currentX, 225)
     $checkbox.Size = New-Object System.Drawing.Size($width, 20)  # Ajustar el tamaño del CheckBox
-    $checkbox.ForeColor = [System.Drawing.Color]::White
-    $checkbox.BackColor = [System.Drawing.Color]::Transparent
     $tabMit.Controls.Add($checkbox)
     $checkbox.Add_Click({
         Update-MitigationMask
@@ -823,10 +779,6 @@ $btnResetMit = New-Object System.Windows.Forms.Button
 $btnResetMit.Location = New-Object System.Drawing.Point(255, 255)
 $btnResetMit.Size = New-Object System.Drawing.Size(90, 20)
 $btnResetMit.Text = "ResetMask"
-$btnResetMit.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
-$btnResetMit.BackColor = [System.Drawing.Color]::FromArgb(66, 66, 66)
-$btnResetMit.ForeColor = [System.Drawing.Color]::White
-$btnResetMit.FlatAppearance.BorderSize = 0
 $tabMit.Controls.Add($btnResetMit)
 $btnResetMit.Add_Click({
     Reset-Checkboxes -parentControl $tabMit
@@ -838,15 +790,12 @@ $btnResetMit.Add_Click({
 ### GFlags
 $tabGFlags = New-Object System.Windows.Forms.TabPage
 $tabGFlags.Text = "Gflags"
-$tabGFlags.BackColor = [System.Drawing.Color]::FromArgb(44, 44, 44)
 
 # GFlagBitmask
 $labelGFlags = New-Object System.Windows.Forms.Label
 $labelGFlags.Location = New-Object System.Drawing.Point(180, 10)
 $labelGFlags.Size = New-Object System.Drawing.Size(200, 13)
 $labelGFlags.Text = "BitMask: 0x0"
-$labelGFlags.BackColor = [System.Drawing.Color]::Transparent
-$labelGFlags.ForeColor = [System.Drawing.Color]::White
 $tabGFlags.Controls.Add($labelGFlags)
 
 # ResetMask
@@ -854,10 +803,6 @@ $btnResetFlags = New-Object System.Windows.Forms.Button
 $btnResetFlags.Location = New-Object System.Drawing.Point(255, 255)
 $btnResetFlags.Size = New-Object System.Drawing.Size(90, 20)
 $btnResetFlags.Text = "ResetMask"
-$btnResetFlags.FlatStyle = [System.Windows.Forms.FlatStyle]::Flat
-$btnResetFlags.BackColor = [System.Drawing.Color]::FromArgb(66, 66, 66)
-$btnResetFlags.ForeColor = [System.Drawing.Color]::White
-$btnResetFlags.FlatAppearance.BorderSize = 0
 $tabGFlags.Controls.Add($btnResetFlags)
 $btnResetFlags.Add_Click({
     Reset-Checkboxes -parentControl $tabGFlags
@@ -884,8 +829,6 @@ foreach ($flag in $flags) {
     $checkbox.Text = $flag.Abbreviation
     $checkbox.Location = New-Object System.Drawing.Point($currentX, $currentY)
     $checkbox.Size = New-Object System.Drawing.Size(55, 20)  # Ajustar el tamaño del CheckBox
-    $checkbox.BackColor = [System.Drawing.Color]::Transparent
-    $checkbox.ForeColor = [System.Drawing.Color]::White
     $tabGFlags.Controls.Add($checkbox)
 
     $checkbox.Add_Click({
