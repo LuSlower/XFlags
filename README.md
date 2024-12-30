@@ -1,7 +1,7 @@
 # XFlags
 set IFEO flags for your executable
 
-[![Total Downloads](https://img.shields.io/github/downloads/LuSlower/Ifeo-Utility/total.svg)](https://github.com/LuSlower/Ifeo-Utility/releases) [![PayPal Badge](https://img.shields.io/badge/PayPal-003087?logo=paypal&logoColor=fff&style=flat)](https://paypal.me/eldontweaks) 
+[![Total Downloads](https://img.shields.io/github/downloads/LuSlower/Ifeo-Utility/total.svg)](https://github.com/LuSlower/Ifeo-Utility/releases)
 
 ![image](https://github.com/user-attachments/assets/90638c22-5607-43fc-8fc0-2eeca18090f4)
 
